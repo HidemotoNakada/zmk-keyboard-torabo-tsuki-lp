@@ -17,7 +17,7 @@
 
         // 以下追加
         scroller {
-            layers = <4>;                                      // スクロールレイヤー
+            layers = <3>;                                      // スクロールレイヤー
             input-processors = <
                 &zip_xy_to_scroll_mapper                       // XY移動でスクロール
                 &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // スクロールのY軸を反転
