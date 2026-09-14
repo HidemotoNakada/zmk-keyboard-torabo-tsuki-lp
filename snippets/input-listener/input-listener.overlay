@@ -1,4 +1,14 @@
 &pointing_listener {
     status = "okay";
     device = <&pointing_device>;
+
+    // 以下追加
+    scroller {
+        layers = <3>;                                      // スクロールレイヤー
+        input-processors = <
+            &zip_xy_to_scroll_mapper                       // XY移動でスクロール
+            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // スクロールのY軸を反転
+            &zip_scroll_scaler 1 16                        // スクロール感度調整
+        >;
+    };
 };
